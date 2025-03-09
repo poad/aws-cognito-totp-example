@@ -1,0 +1,99 @@
+name: Deploy
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+    - main
+
+  workflow_dispatch:
+
+env:
+  OIDC_IAM_ROLE_ARN: ${{ secrets.OIDC_IAM_ROLE_ARN }}
+  AWS_REGION: us-west-2
+
+permissions:
+  id-token: write
+  contents: read
+
+# 同時実行すると CREATE_IN_PROGRESS や UPDATE_IN_PROGRESS 状態で cdk deploy を行う可能性があるため抑止する
+concurrency:
+  group: "cloudformation"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    strategy:
+      matrix:
+        node-version: [22.x]
+
+    runs-on: ubuntu-latest
+    steps:
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: ${{ env.OIDC_IAM_ROLE_ARN }}
+        role-session-name: GitHubActions
+        aws-region: ${{ env.AWS_REGION }}
+
+    - uses: actions/checkout@v4
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        check-latest: true
+
+    - uses: pnpm/action-setup@v4
+      name: Install pnpm
+      with:
+        run_install: |
+          - recursive: true
+            args: [--no-frozen-lockfile]
+          - args: [--global, aws-cdk, esbuild]
+
+    - name: deploy infra
+      working-directory: ./cdk
+      run: |
+        cdk deploy
+
+    - name: resolve resources
+      id: resolve-resources
+      run: |
+        stack_name="$(jq -r '.context.config.stackName' cdk.json)"
+        response=$(aws cloudformation describe-stack-resources --stack-name "$stack_name")
+        cf_dist_id=$(echo "$response" | jq -r '.StackResources.[] | select(.ResourceType == "AWS::CloudFront::Distribution") | .PhysicalResourceId')
+
+        cf_dist_url=$(aws cloudfront get-distribution --id $cf_dist_id --query "Distribution.DomainName" --output=text)
+        s3_bucket_name=$(echo "$response" | jq -r '.StackResources.[] | select(.ResourceType == "AWS::S3::Bucket") | .PhysicalResourceId')
+        client_id=$(echo "$response" | jq -r '.StackResources.[] | select(.ResourceType == "AWS::Cognito::UserPoolClient") | .PhysicalResourceId')
+        id_pool_id=$(echo "$response" | jq -r '.StackResources.[] | select(.ResourceType == "AWS::Cognito::IdentityPool") | .PhysicalResourceId')
+        user_pool_id=$(echo "$response" | jq -r '.StackResources.[] | select(.ResourceType == "AWS::Cognito::UserPool") | .PhysicalResourceId')
+        user_pool_domain=$(echo "$response" | jq -r '.StackResources.[] | select(.ResourceType == "AWS::Cognito::UserPoolDomain") | .PhysicalResourceId')
+
+        echo "DIST_URL=$cf_dist_url" >> "$GITHUB_OUTPUT"
+        echo "BUCKET_NAME=$s3_bucket_name" >> "$GITHUB_OUTPUT"
+        echo "CLIENT_ID=$client_id" >> "$GITHUB_OUTPUT"
+        echo "ID_POOL_ID=$id_pool_id" >> "$GITHUB_OUTPUT"
+        echo "USER_POOL_ID=$user_pool_id" >> "$GITHUB_OUTPUT"
+        echo "USER_POOL_DOMAIN=$user_pool_domain" >> "$GITHUB_OUTPUT"
+
+    - name: deploy app
+      working-directory: ./app/cdk
+      env:
+        DIST_URL: ${{ steps.resolve-resources.outputs.DIST_URL }}
+        BUCKET_NAME: ${{ steps.resolve-resources.outputs.BUCKET_NAME }}
+        CLIENT_ID: ${{ steps.resolve-resources.outputs.CLIENT_ID }}
+        ID_POOL_ID: ${{ steps.resolve-resources.outputs.ID_POOL_ID }}
+        USER_POOL_ID: ${{ steps.resolve-resources.outputs.USER_POOL_ID }}
+        USER_POOL_DOMAIN: ${{ steps.resolve-resources.outputs.USER_POOL_DOMAIN }}
+      run: |
+        cdk deploy \
+          -c s3bucketName="$BUCKET_NAME" \
+          -c userPoolId="$USER_POOL_ID" \
+          -c clientId="$CLIENT_ID" \
+          -c identityPoolId="$ID_POOL_ID" \
+          -c cognitoDomain="$USER_POOL_DOMAIN" \
+          -c cfUrl="$DIST_URL"
