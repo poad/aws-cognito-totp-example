@@ -5,6 +5,7 @@ import * as cloudfront from 'aws-cdk-lib/aws-cloudfront';
 import * as origins from 'aws-cdk-lib/aws-cloudfront-origins';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as cognito from 'aws-cdk-lib/aws-cognito';
+import { buildCfFunction } from './process/setup';
 
 export interface CloudfrontCdnTemplateStackProps extends cdk.StackProps {
   domain: string;
@@ -214,6 +215,8 @@ export class CloudfrontCdnTemplateStack extends cdk.Stack {
         },
       },
     );
+
+    buildCfFunction();
 
     const s3bucket = new s3.Bucket(this, 'S3Bucket', {
       bucketName,
