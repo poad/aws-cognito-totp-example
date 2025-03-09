@@ -1,0 +1,5 @@
+packages:
+  - './cdk'
+  - './app'
+  - './app/cdk'
+  - './cdk/function'

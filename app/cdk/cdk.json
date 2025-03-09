@@ -1,0 +1,35 @@
+{
+  "app": "npx tsx bin/cdk.ts",
+  "watch": {
+    "include": [
+      "**"
+    ],
+    "exclude": [
+      "README.md",
+      "cdk*.json",
+      "**/*.d.ts",
+      "**/*.js",
+      "tsconfig.json",
+      "package*.json",
+      "yarn.lock",
+      "node_modules",
+      "test",
+      "eslint.config.mjs"
+    ]
+  },
+  "requireApproval": "never",
+  "versionReporting": false,
+  "pathMetadata": false,
+  "context": {
+    "config": {
+      "stackName": "aws-cognito-totp-example",
+      "domain": "totp-example",
+      "callbackUrls": ["http://localhost:5174"],
+      "logoutUrls": ["http://localhost:5174"],
+      "bucketName": "aws-cognito-totp-example",
+      "cloudfront": {
+        "comment": "Example Cognito TOTP"
+      }
+    }
+  }
+}
