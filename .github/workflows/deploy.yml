@@ -61,6 +61,7 @@ jobs:
 
     - name: resolve resources
       id: resolve-resources
+      working-directory: ./cdk
       run: |
         stack_name="$(jq -r '.context.config.stackName' cdk.json)"
         response=$(aws cloudformation describe-stack-resources --stack-name "$stack_name")
