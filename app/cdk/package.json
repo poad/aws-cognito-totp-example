@@ -29,10 +29,10 @@
     "ts-node": "^10.9.2",
     "tsx": "^4.19.3",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.29.0"
+    "typescript-eslint": "^8.29.1"
   },
   "dependencies": {
-    "aws-cdk-lib": "^2.188.0",
+    "aws-cdk-lib": "^2.189.0",
     "constructs": "^10.4.2"
   }
 }
