@@ -1,5 +1,8 @@
 packages:
-  - './cdk'
-  - './app'
-  - './app/cdk'
-  - './cdk/function'
+  - ./cdk
+  - ./app
+  - ./app/cdk
+  - ./cdk/function
+
+onlyBuiltDependencies:
+  - '@swc/core'
