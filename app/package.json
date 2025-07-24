@@ -11,10 +11,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@aws-amplify/core": "^6.12.3",
+    "@aws-amplify/core": "^6.13.0",
     "@aws-amplify/ui": "^6.10.3",
     "@aws-amplify/ui-react": "^6.11.2",
-    "aws-amplify": "^6.15.3",
+    "aws-amplify": "^6.15.4",
     "preact": "^10.26.9",
     "preact-render-to-string": "^6.5.13",
     "react": "npm:@preact/compat@^18.3.1",
