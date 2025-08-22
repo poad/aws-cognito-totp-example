@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.25.1",
-    "@aws-sdk/credential-provider-node": "^3.872.0",
+    "@aws-sdk/credential-provider-node": "^3.873.0",
     "@langchain/anthropic": "^0.3.26",
     "@langchain/aws": "^0.1.14",
     "@langchain/core": "^0.3.72",
