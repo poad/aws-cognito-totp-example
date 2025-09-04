@@ -3862,8 +3862,8 @@ packages:
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
 
-  vite-prerender-plugin@0.5.11:
-    resolution: {integrity: sha512-xWOhb8Ef2zoJIiinYVunIf3omRfUbEXcPEvrkQcrDpJ2yjDokxhvQ26eSJbkthRhymntWx6816jpATrJphh+ug==}
+  vite-prerender-plugin@0.5.12:
+    resolution: {integrity: sha512-EiwhbMn+flg14EysbLTmZSzq8NGTxhytgK3bf4aGRF1evWLGwZiHiUJ1KZDvbxgKbMf2pG6fJWGEa3UZXOnR1g==}
     peerDependencies:
       vite: 5.x || 6.x || 7.x
 
@@ -5566,7 +5566,7 @@ snapshots:
       debug: 4.4.1
       picocolors: 1.1.1
       vite: 6.3.5(@types/node@22.18.0)(tsx@4.20.5)(yaml@2.8.1)
-      vite-prerender-plugin: 0.5.11(vite@6.3.5(@types/node@22.18.0)(tsx@4.20.5)(yaml@2.8.1))
+      vite-prerender-plugin: 0.5.12(vite@6.3.5(@types/node@22.18.0)(tsx@4.20.5)(yaml@2.8.1))
     transitivePeerDependencies:
       - preact
       - supports-color
@@ -8711,7 +8711,7 @@ snapshots:
       - tsx
       - yaml
 
-  vite-prerender-plugin@0.5.11(vite@6.3.5(@types/node@22.18.0)(tsx@4.20.5)(yaml@2.8.1)):
+  vite-prerender-plugin@0.5.12(vite@6.3.5(@types/node@22.18.0)(tsx@4.20.5)(yaml@2.8.1)):
     dependencies:
       kolorist: 1.8.0
       magic-string: 0.30.18
