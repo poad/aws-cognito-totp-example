@@ -1,9 +1,9 @@
 // @ts-check
 
+import { defineConfig } from 'eslint/config';
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import tseslint from 'typescript-eslint';
-// @ts-expect-error ignore type errors
 import eslintImport from "eslint-plugin-import";
 
 import { includeIgnoreFile } from '@eslint/compat';
@@ -14,7 +14,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const gitignorePath = path.resolve(__dirname, ".gitignore");
 
-export default tseslint.config(
+export default defineConfig(
   includeIgnoreFile(gitignorePath),
   {
     ignores: [
@@ -41,8 +41,6 @@ export default tseslint.config(
     ...eslintImport.flatConfigs.typescript,
     plugins: {
       '@stylistic': stylistic,
-      '@stylistic/ts': stylistic,
-      '@stylistic/jsx': stylistic,
     },
     settings: {
       'import/internal-regex': '^~/',
@@ -57,10 +55,9 @@ export default tseslint.config(
     },
     rules: {
       '@stylistic/semi': ["error", "always"],
-      '@stylistic/ts/indent': ['error', 2],
-      '@stylistic/jsx/jsx-indent': ['error', 2],
-      'comma-dangle': ["error", "always-multiline"],
-      quotes: ["error", "single"],
+      '@stylistic/indent': ['error', 2],
+      '@stylistic/comma-dangle': ["error", "always-multiline"],
+      '@stylistic/quotes': ["error", "single"],
     },
   },
 );
