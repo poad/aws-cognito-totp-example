@@ -18,6 +18,7 @@ const gitignorePath = path.resolve(__dirname, '.gitignore');
 export default defineConfig(
   includeIgnoreFile(gitignorePath),
   { ignores: ['dist', 'cdk'] },
+  reactHooks.configs.flat.recommended,
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ['**/*.{ts,tsx}'],
@@ -26,7 +27,6 @@ export default defineConfig(
       globals: globals.browser,
     },
     plugins: {
-      'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
     },
     rules: {
