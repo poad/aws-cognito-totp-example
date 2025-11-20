@@ -16,9 +16,9 @@
   "devDependencies": {
     "@eslint/compat": "^1.4.1",
     "@eslint/js": "^9.39.1",
-    "@stylistic/eslint-plugin": "^5.5.0",
+    "@stylistic/eslint-plugin": "^5.6.1",
     "@types/node": "^22.19.1",
-    "aws-cdk": "^2.1031.2",
+    "aws-cdk": "^2.1033.0",
     "eslint": "^9.39.1",
     "eslint-import-resolver-typescript": "^3.10.1",
     "eslint-plugin-import": "^2.32.0",
@@ -26,10 +26,10 @@
     "eslint-plugin-solid": "^0.14.5",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.46.4"
+    "typescript-eslint": "^8.47.0"
   },
   "dependencies": {
-    "aws-cdk-lib": "^2.223.0",
+    "aws-cdk-lib": "^2.225.0",
     "constructs": "^10.4.3"
   }
 }
