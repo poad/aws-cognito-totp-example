@@ -28,7 +28,7 @@
     "eslint-plugin-promise": "^7.2.1",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.48.0",
+    "typescript-eslint": "^8.48.1",
     "vite": "^6.4.1",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.2.4"
@@ -42,7 +42,7 @@
     "@langchain/langgraph": "^0.2.74",
     "@langchain/openai": "^0.3.17",
     "@smithy/eventstream-codec": "^3.1.10",
-    "aws-cdk-lib": "^2.230.0",
+    "aws-cdk-lib": "^2.231.0",
     "constructs": "^10.4.3",
     "langfuse": "^3.38.6",
     "langfuse-langchain": "^3.38.6",
