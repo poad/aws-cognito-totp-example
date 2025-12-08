@@ -20,10 +20,10 @@
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-promise": "^7.2.1",
     "eslint-plugin-solid": "^0.14.5",
-    "pnpm": "^10.24.0",
-    "typescript-eslint": "^8.48.1"
+    "pnpm": "^10.25.0",
+    "typescript-eslint": "^8.49.0"
   },
   "author": "",
   "license": "UNLICENSED",
-  "packageManager": "pnpm@10.24.0"
+  "packageManager": "pnpm@10.25.0"
 }
