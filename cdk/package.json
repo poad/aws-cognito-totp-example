@@ -20,7 +20,7 @@
     "@types/node": "^22.19.3",
     "@types/uuid": "^10.0.0",
     "@vitest/eslint-plugin": "^1.5.2",
-    "aws-cdk": "^2.1100.0",
+    "aws-cdk": "^2.1100.1",
     "dotenv": "^16.6.1",
     "eslint": "^9.39.2",
     "eslint-import-resolver-typescript": "^3.10.1",
@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.30.0",
-    "@aws-sdk/credential-provider-node": "^3.952.0",
+    "@aws-sdk/credential-provider-node": "^3.954.0",
     "@langchain/anthropic": "^0.3.33",
     "@langchain/aws": "^0.1.15",
     "@langchain/core": "^0.3.79",
