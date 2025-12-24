@@ -5,7 +5,7 @@ import * as cloudfront from 'aws-cdk-lib/aws-cloudfront';
 import * as origins from 'aws-cdk-lib/aws-cloudfront-origins';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as cognito from 'aws-cdk-lib/aws-cognito';
-import { buildCfFunction } from './process/setup';
+import { buildCfFunction } from './process/setup.js';
 
 export interface CloudfrontCdnTemplateStackProps extends cdk.StackProps {
   domain: string;
