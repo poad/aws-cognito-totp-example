@@ -19,7 +19,7 @@
     "@types/aws-lambda": "^8.10.159",
     "@types/node": "^24.10.4",
     "@vitest/eslint-plugin": "^1.6.5",
-    "aws-cdk": "^2.1100.2",
+    "aws-cdk": "^2.1100.3",
     "dotenv": "^16.6.1",
     "eslint": "^9.39.2",
     "eslint-import-resolver-typescript": "^4.4.4",
