@@ -15,7 +15,7 @@
     "@aws-amplify/ui": "^6.15.0",
     "@aws-amplify/ui-react": "^6.15.0",
     "aws-amplify": "^6.16.2",
-    "preact": "^10.28.3",
+    "preact": "^10.28.4",
     "preact-render-to-string": "^6.6.5",
     "react": "npm:@preact/compat@^18.3.1",
     "react-dom": "npm:@preact/compat@^18.3.1"
@@ -24,7 +24,7 @@
     "@eslint/compat": "^2.0.2",
     "@eslint/js": "^10.0.1",
     "@preact/preset-vite": "^2.10.3",
-    "@stylistic/eslint-plugin": "^5.8.0",
+    "@stylistic/eslint-plugin": "^5.9.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react-swc": "^4.2.3",
