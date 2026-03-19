@@ -41,7 +41,7 @@ importers:
         version: 4.4.4(eslint-plugin-import@2.32.0)(eslint@10.0.3)
       eslint-plugin-import:
         specifier: ^2.32.0
-        version: 2.32.0(@typescript-eslint/parser@8.57.1(eslint@10.0.3)(typescript@5.9.3))(eslint-import-resolver-typescript@4.4.4)(eslint@10.0.3)
+        version: 2.32.0(eslint-import-resolver-typescript@4.4.4)(eslint@10.0.3)
       eslint-plugin-promise:
         specifier: ^7.2.1
         version: 7.2.1(eslint@10.0.3)
@@ -147,8 +147,8 @@ importers:
         specifier: ^25.5.0
         version: 25.5.0
       aws-cdk:
-        specifier: ^2.1111.0
-        version: 2.1111.0
+        specifier: ^2.1112.0
+        version: 2.1112.0
       eslint:
         specifier: '>=10'
         version: 10.0.3
@@ -157,7 +157,7 @@ importers:
         version: 4.4.4(eslint-plugin-import@2.32.0)(eslint@10.0.3)
       eslint-plugin-import:
         specifier: ^2.32.0
-        version: 2.32.0(@typescript-eslint/parser@8.57.1(eslint@10.0.3)(typescript@5.9.3))(eslint-import-resolver-typescript@4.4.4)(eslint@10.0.3)
+        version: 2.32.0(eslint-import-resolver-typescript@4.4.4)(eslint@10.0.3)
       eslint-plugin-promise:
         specifier: ^7.2.1
         version: 7.2.1(eslint@10.0.3)
@@ -205,8 +205,8 @@ importers:
         specifier: ^1.6.12
         version: 1.6.12(eslint@10.0.3)(typescript@5.9.3)(vitest@4.1.0(@types/node@25.5.0)(vite@8.0.0(@types/node@25.5.0)(esbuild@0.27.4)(tsx@4.21.0)(yaml@2.8.2)))
       aws-cdk:
-        specifier: ^2.1111.0
-        version: 2.1111.0
+        specifier: ^2.1112.0
+        version: 2.1112.0
       dotenv:
         specifier: ^17.3.1
         version: 17.3.1
@@ -218,7 +218,7 @@ importers:
         version: 4.4.4(eslint-plugin-import@2.32.0)(eslint@10.0.3)
       eslint-plugin-import:
         specifier: ^2.32.0
-        version: 2.32.0(@typescript-eslint/parser@8.57.1(eslint@10.0.3)(typescript@5.9.3))(eslint-import-resolver-typescript@4.4.4)(eslint@10.0.3)
+        version: 2.32.0(eslint-import-resolver-typescript@4.4.4)(eslint@10.0.3)
       eslint-plugin-promise:
         specifier: ^7.2.1
         version: 7.2.1(eslint@10.0.3)
@@ -2082,8 +2082,8 @@ packages:
       - yaml
       - mime-types
 
-  aws-cdk@2.1111.0:
-    resolution: {integrity: sha512-69AVF04cxbAhYzmeJYtUF5bs6ruNnH05EQZJfjadk5Lpg+HVaJY2NjG/2qgsMmKrfRgvLet73Ir8ehVlAaaGng==}
+  aws-cdk@2.1112.0:
+    resolution: {integrity: sha512-IYUbsd9tpBQRqEO2evWsG+p2ZNa6wG5/sJvmWaqo45V1ep8BW+mrf+jEpFLD9uDPXqRA57EZGVGils7QLbOhNA==}
     engines: {node: '>= 18.0.0'}
     hasBin: true
 
@@ -5734,7 +5734,7 @@ snapshots:
       '@aws-cdk/cloud-assembly-schema': 52.2.0
       constructs: 10.5.1
 
-  aws-cdk@2.1111.0: {}
+  aws-cdk@2.1112.0: {}
 
   babel-plugin-transform-hook-names@1.0.2(@babel/core@7.29.0):
     dependencies:
@@ -6058,22 +6058,21 @@ snapshots:
       tinyglobby: 0.2.15
       unrs-resolver: 1.11.1
     optionalDependencies:
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.57.1(eslint@10.0.3)(typescript@5.9.3))(eslint-import-resolver-typescript@4.4.4)(eslint@10.0.3)
+      eslint-plugin-import: 2.32.0(eslint-import-resolver-typescript@4.4.4)(eslint@10.0.3)
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.12.1(@typescript-eslint/parser@8.57.1(eslint@10.0.3)(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@4.4.4)(eslint@10.0.3):
+  eslint-module-utils@2.12.1(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@4.4.4)(eslint@10.0.3):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
-      '@typescript-eslint/parser': 8.57.1(eslint@10.0.3)(typescript@5.9.3)
       eslint: 10.0.3
       eslint-import-resolver-node: 0.3.9
       eslint-import-resolver-typescript: 4.4.4(eslint-plugin-import@2.32.0)(eslint@10.0.3)
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.57.1(eslint@10.0.3)(typescript@5.9.3))(eslint-import-resolver-typescript@4.4.4)(eslint@10.0.3):
+  eslint-plugin-import@2.32.0(eslint-import-resolver-typescript@4.4.4)(eslint@10.0.3):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.9
@@ -6084,7 +6083,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 10.0.3
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.1(@typescript-eslint/parser@8.57.1(eslint@10.0.3)(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@4.4.4)(eslint@10.0.3)
+      eslint-module-utils: 2.12.1(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@4.4.4)(eslint@10.0.3)
       hasown: 2.0.2
       is-core-module: 2.16.1
       is-glob: 4.0.3
@@ -6095,8 +6094,6 @@ snapshots:
       semver: 6.3.1
       string.prototype.trimend: 1.0.9
       tsconfig-paths: 3.15.0
-    optionalDependencies:
-      '@typescript-eslint/parser': 8.57.1(eslint@10.0.3)(typescript@5.9.3)
     transitivePeerDependencies:
       - eslint-import-resolver-typescript
       - eslint-import-resolver-webpack
