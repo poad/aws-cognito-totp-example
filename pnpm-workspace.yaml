@@ -17,8 +17,10 @@ minimumReleaseAgeExclude:
 overrides:
   '@types/node': '^24'
   eslint-import-resolver-typescript: '>=4'
+  fast-xml-parser@<5.7.0: '>=5.7.0'
   lodash@<=4.17.23: '>=4.18.0'
   lodash@>=4.0.0 <=4.17.23: '>=4.18.0'
   semver: '>=7'
+  uuid@<14.0.0: '>=14.0.0'
 
 trustPolicy: no-downgrade
