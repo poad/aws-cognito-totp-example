@@ -15,8 +15,8 @@
     "@aws-amplify/ui": "^6.15.4",
     "@aws-amplify/ui-react": "^6.15.4",
     "aws-amplify": "^6.17.0",
-    "preact": "^10.29.1",
-    "preact-render-to-string": "^6.6.7",
+    "preact": "^10.29.2",
+    "preact-render-to-string": "^6.7.0",
     "react": "npm:@preact/compat@^18.3.2",
     "react-dom": "npm:@preact/compat@^18.3.2"
   },
