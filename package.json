@@ -15,14 +15,28 @@
     "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
-    "eslint": "^10.5.0",
+    "eslint": "^10.6.0",
     "eslint-import-resolver-typescript": "^4.4.5",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-promise": "^7.3.0",
     "eslint-plugin-solid": "^0.14.5",
-    "typescript-eslint": "^8.62.0"
+    "typescript-eslint": "^8.63.0"
   },
   "author": "",
   "license": "UNLICENSED",
-  "packageManager": "pnpm@11.9.0"
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "~11.10.0",
+      "onFail": "download"
+    }
+  },
+  "engines": {
+    "runtime": {
+      "name": "node",
+      "version": "^24.18.0",
+      "onFail": "download"
+    }
+  },
+  "dependencies": {}
 }
