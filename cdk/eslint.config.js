@@ -1,12 +1,11 @@
 // @ts-check
 
-import { defineConfig } from 'eslint/config';
+import { defineConfig, includeIgnoreFile } from 'eslint/config';
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import tseslint from 'typescript-eslint';
 import eslintImport from "eslint-plugin-import";
 
-import { includeIgnoreFile } from '@eslint/compat';
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
