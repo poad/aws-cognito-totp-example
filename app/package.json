@@ -21,7 +21,6 @@
     "react-dom": "npm:@preact/compat@^18.3.2"
   },
   "devDependencies": {
-    "@eslint/compat": "^2.1.0",
     "@eslint/js": "^10.0.1",
     "@preact/preset-vite": "^2.10.6",
     "@stylistic/eslint-plugin": "^5.10.0",

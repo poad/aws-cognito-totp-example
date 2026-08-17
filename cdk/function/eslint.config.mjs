@@ -12,7 +12,7 @@ import { fileURLToPath } from "node:url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const gitignorePath = path.resolve(__dirname, ".gitignore");
+const gitignorePath = path.resolve(__dirname, '..', ".gitignore");
 
 export default defineConfig(
   includeIgnoreFile(gitignorePath),
@@ -30,11 +30,19 @@ export default defineConfig(
       'dist',
       '.vinxi',
       '.output',
-      'function',
     ],
   },
   {
     files: ['{bin,lib,lambda}/**/*.{ts,tsx}'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      parser: tseslint.parser,
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: __dirname,
+      },
+    },
     extends: [
       js.configs.recommended,
       tseslint.configs.strict,

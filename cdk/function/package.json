@@ -2,13 +2,14 @@
   "name": "@cloudfront-cdn-template/function",
   "version": "0.1.0",
   "bin": "bin/cloudfront-cdn-template.js",
+  "type": "commonjs",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "lint": "eslint *.ts ",
+    "lint": "eslint",
     "style-check": "prettier --write ",
     "format": "prettier --write ",
-    "fix": "prettier --write  && eslint --fix *.ts "
+    "fix": "prettier --write && eslint --fix"
   },
   "devDependencies": {
     "typescript": "^6.0.3"
