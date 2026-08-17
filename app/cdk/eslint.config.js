@@ -1,10 +1,11 @@
 // @ts-check
 
 import { defineConfig, includeIgnoreFile } from 'eslint/config';
-import eslint from '@eslint/js';
+import js from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import tseslint from 'typescript-eslint';
-import eslintImport from "eslint-plugin-import";
+import { importX, createNodeResolver } from "eslint-plugin-import-x";
+import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
 
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -31,26 +32,24 @@ export default defineConfig(
       '.output',
     ],
   },
-  eslint.configs.recommended,
-  ...tseslint.configs.strict,
-  ...tseslint.configs.stylistic,
   {
     files: ['{bin,lib,lambda}/**/*.{ts,tsx}'],
-    ...eslintImport.flatConfigs.recommended,
-    ...eslintImport.flatConfigs.typescript,
+    extends: [
+      js.configs.recommended,
+      tseslint.configs.strict,
+      tseslint.configs.stylistic,
+      'import-x/flat/recommended',
+      'import-x/flat/typescript',
+    ],
     plugins: {
       '@stylistic': stylistic,
+      'import-x': importX,
     },
     settings: {
-      'import/internal-regex': '^~/',
-      'import/resolver': {
-        node: {
-          extensions: ['.ts', '.tsx'],
-        },
-        typescript: {
-          alwaysTryTypes: true,
-        },
-      },
+      'import-x/resolver-next': [
+        createTypeScriptImportResolver({ alwaysTryTypes: true }),
+        createNodeResolver({ extensions: ['.ts', '.tsx'] }),
+      ],
     },
     rules: {
       '@stylistic/semi': ["error", "always"],
