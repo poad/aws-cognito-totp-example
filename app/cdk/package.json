@@ -6,9 +6,9 @@
     "cdk": "bin/cdk.js"
   },
   "scripts": {
-    "build": "tsc",
-    "clean": "tsc --build --clean",
-    "watch": "tsc -w",
+    "build": "node_modules/@typescript/native/bin/tsc",
+    "clean": "node_modules/@typescript/native/bin/tsc --build --clean",
+    "watch": "node_modules/@typescript/native/bin/tsc -w",
     "cdk": "cdk",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix"
@@ -16,15 +16,16 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
-    "@types/node": "^24.13.3",
+    "@types/node": "^26.2.0",
+    "@typescript/native": "npm:typescript@^7.0.2",
     "aws-cdk": "^2.1138.0",
     "eslint": "^10.9.0",
     "eslint-import-resolver-typescript": "^4.4.5",
     "eslint-plugin-import-x": "^4.17.1",
     "eslint-plugin-promise": "^7.3.0",
-    "eslint-plugin-solid": "^0.14.5",
+    "eslint-plugin-solid": "^0.16.0",
     "tsx": "^4.23.12",
-    "typescript": "^5.9.3",
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
     "typescript-eslint": "^8.67.0"
   },
   "dependencies": {
