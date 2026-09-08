@@ -26,7 +26,7 @@
     "eslint-plugin-solid": "^0.17.0",
     "tsx": "^4.23.13",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
-    "typescript-eslint": "^8.68.0"
+    "typescript-eslint": "^8.69.0"
   },
   "dependencies": {
     "aws-cdk-lib": "^2.267.0",
