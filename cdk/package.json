@@ -19,7 +19,7 @@
     "@types/node": "^26.6.1",
     "@typescript/native": "npm:typescript@^7.0.2",
     "@vitest/eslint-plugin": "^1.6.27",
-    "aws-cdk": "^2.1141.0",
+    "aws-cdk": "^2.1142.0",
     "dotenv": "^17.4.2",
     "eslint": "^10.10.0",
     "eslint-import-resolver-typescript": "^4.4.5",
