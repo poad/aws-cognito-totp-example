@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "lint": "eslint",
+    "lint": "oxlint",
     "style-check": "prettier --write ",
     "format": "prettier --write ",
     "fix": "prettier --write && eslint --fix"

@@ -7,31 +7,24 @@
     "lint-fix": "pnpm -r lint-fix",
     "build": "pnpm -r --if-present build",
     "dev": "pnpm --filter @llm-ts-example/app dev",
-    "clean": "pnpm -r --if-present clean"
+    "build:clean": "pnpm -r --if-present clean"
   },
   "keywords": [],
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.7",
-    "@eslint/js": "^10.0.1",
-    "@stylistic/eslint-plugin": "^5.10.0",
-    "eslint": "^10.12.0",
-    "eslint-import-resolver-typescript": "^4.4.5",
-    "eslint-plugin-import-x": "^4.17.1",
-    "eslint-plugin-promise": "^7.3.0",
-    "eslint-plugin-solid": "^0.14.5",
-    "typescript-eslint": "^8.71.2"
+    "oxfmt": "^0.78.0",
+    "oxlint": "^1.93.0"
   },
   "author": "",
   "license": "UNLICENSED",
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "12.15.0",
+      "version": "12.20.0",
       "onFail": "download"
     },
     "runtime": {
       "name": "node",
-      "version": "^24.22.1",
+      "version": "^26.13.1",
       "onFail": "download"
     }
   }
